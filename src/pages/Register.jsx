@@ -42,7 +42,7 @@ const Register = () => {
                                 <p>Already has an account? <Link to="/login" className="text-decoration-underline text-info">Login</Link> </p>
                             </div>
                             <div className="text-center">
-                                <button class="my-2 mx-auto btn btn-dark" type="submit" disabled>
+                                <button class="my-2 mx-auto btn btn-dark" type="submit">
                                     Register
                                 </button>
                             </div>
@@ -50,7 +50,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
+        
         </>
     )
 }

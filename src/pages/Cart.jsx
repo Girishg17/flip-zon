@@ -1,8 +1,11 @@
-import React from "react";
+
 import { Footer, Navbar } from "../components";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addCart, delCart } from "../redux/action";
 import { Link } from "react-router-dom";
+import { ref, getDownloadURL } from "firebase/storage";
+import storage from "../firebase-config";
 
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
@@ -22,9 +25,32 @@ const Cart = () => {
       </div>
     );
   };
+  const ImageFirebase = ({imageName}) => {
+    const [imageURL, setimageURL] = useState("");
+    useEffect(() => {
+      getDownloadURL(ref(storage, `images/${imageName}`))
+        .then((url) => {
+          console.log(url);
+          setimageURL(url);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }, [imageName]);
+
+    return (
+      <img
+        src={imageURL}
+        className="card-img-top p-3"
+        alt="Card"
+        height={300}
+      />
+    );
+  };
 
   const addItem = (product) => {
     dispatch(addCart(product));
+ 
   };
   const removeItem = (product) => {
     dispatch(delCart(product));
@@ -61,13 +87,7 @@ const Cart = () => {
                                 className="bg-image rounded"
                                 data-mdb-ripple-color="light"
                               >
-                                <img
-                                  src={item.image}
-                                  // className="w-100"
-                                  alt={item.title}
-                                  width={100}
-                                  height={75}
-                                />
+                                <ImageFirebase imageName={item.image} />
                               </div>
                             </div>
 
@@ -169,7 +189,7 @@ const Cart = () => {
         <hr />
         {state.length > 0 ? <ShowCart /> : <EmptyCart />}
       </div>
-      <Footer />
+     
     </>
   );
 };

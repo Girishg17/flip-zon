@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
+import productData from "./ProductDetails";
 
 import { Footer, Navbar } from "../components";
 
@@ -26,6 +27,7 @@ const Product = () => {
       setLoading2(true);
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
       const data = await response.json();
+    
       setProduct(data);
       setLoading(false);
       const response2 = await fetch(
@@ -186,7 +188,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <Footer />
+     
     </>
   );
 };
