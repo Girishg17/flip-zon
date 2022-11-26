@@ -1,8 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Footer, Navbar } from "../components";
-
+import Cookies from "universal-cookie";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+ const onSubmit = (e) => {
+    e.preventDefault();
+    const token = new Cookies();
+          token.set('username', setEmail, { path: "/", maxAge: 604800 })
+          navigate("/");
+
+ 
+  }
+
+
   return (
     <>
       <Navbar />
@@ -11,7 +25,7 @@ const Login = () => {
         <hr />
         <div class="row my-4 h-100">
           <div className="col-md-4 col-lg-4 col-sm-8 mx-auto">
-            <form>
+            <form onSubmit={onSubmit}>
               <div class="my-3">
                 <label for="display-4">Email address</label>
                 <input
@@ -19,6 +33,7 @@ const Login = () => {
                   class="form-control"
                   id="floatingInput"
                   placeholder="name@example.com"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div class="my-3">
@@ -28,6 +43,7 @@ const Login = () => {
                   class="form-control"
                   id="floatingPassword"
                   placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className="my-3">
