@@ -1,7 +1,8 @@
-import React from "react";
 import { Footer, Navbar } from "../components";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import PaytmentDialog from "./PaymentDialog";
 const Checkout = () => {
   const state = useSelector((state) => state.handleCart);
 
@@ -21,9 +22,25 @@ const Checkout = () => {
   };
 
   const ShowCheckout = () => {
+    const [fullname, setFullname] = React.useState("");
+    const [address, setAddress] = React.useState("");
+    const [lastname, setLastname] = React.useState("");
+    const [email, setEmail] = React.useState("");
+    const [open, setOpen] = React.useState(false);
     let subtotal = 0;
     let shipping = 30.0;
     let totalItems = 0;
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      setOpen(true);
+      setTimeout(() => {
+        setOpen(false);
+       
+        
+      }
+      , 3000);
+
+    };
     state.map((item) => {
       return (subtotal += item.price * item.qty);
     });
@@ -43,7 +60,8 @@ const Checkout = () => {
                 <div className="card-body">
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                      Products ({totalItems})<span>${Math.round(subtotal)}</span>
+                      Products ({totalItems})
+                      <span>${Math.round(subtotal)}</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                       Shipping
@@ -67,7 +85,7 @@ const Checkout = () => {
                   <h4 className="mb-0">Billing address</h4>
                 </div>
                 <div className="card-body">
-                  <form className="needs-validation" novalidate>
+                  <form className="needs-validation" novalidate onSubmit={handleSubmit}>
                     <div className="row g-3">
                       <div className="col-sm-6 my-1">
                         <label for="firstName" className="form-label">
@@ -78,8 +96,9 @@ const Checkout = () => {
                           className="form-control"
                           id="firstName"
                           placeholder=""
-                          value=""
+                          value={fullname}
                           required
+                          onChange={(e) => setFullname(e.target.value)}
                         />
                         <div className="invalid-feedback">
                           Valid first name is required.
@@ -95,8 +114,9 @@ const Checkout = () => {
                           className="form-control"
                           id="lastName"
                           placeholder=""
-                          value=""
                           required
+                          value={lastname}
+                          onChange={(e) => setLastname(e.target.value)}
                         />
                         <div className="invalid-feedback">
                           Valid last name is required.
@@ -113,6 +133,8 @@ const Checkout = () => {
                           id="email"
                           placeholder="you@example.com"
                           required
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
                         />
                         <div className="invalid-feedback">
                           Please enter a valid email address for shipping
@@ -130,6 +152,8 @@ const Checkout = () => {
                           id="address"
                           placeholder="1234 Main St"
                           required
+                          value={address}
+                          onChange={(e) => setAddress(e.target.value)}
                         />
                         <div className="invalid-feedback">
                           Please enter your shipping address.
@@ -271,7 +295,8 @@ const Checkout = () => {
 
                     <button
                       className="w-100 btn btn-primary "
-                      type="submit" disabled
+                      type="submit"
+                     
                     >
                       Continue to checkout
                     </button>
@@ -281,6 +306,7 @@ const Checkout = () => {
             </div>
           </div>
         </div>
+        <PaytmentDialog open={open} />
       </>
     );
   };
@@ -292,7 +318,6 @@ const Checkout = () => {
         <hr />
         {state.length ? <ShowCheckout /> : <EmptyCart />}
       </div>
-     
     </>
   );
 };
