@@ -1,6 +1,6 @@
 const productData = [
   {
-    "category": "a",
+    "category": "men's clothing",
     "description": "b",
     "id": 1,
     "image": "allon solly junior.png",
@@ -9,7 +9,7 @@ const productData = [
     "title": "c"
   },
   {
-    "category": "a",
+    "category": "men's clothing",
     "description": "b",
     "id": 2,
     "image": "generic.png",
@@ -18,7 +18,7 @@ const productData = [
     "title": "c"
   },
   {
-    "category": "a",
+    "category": "men's clothing",
     "description": "b",
     "id": 3,
     "image": "eyebogler.png",
@@ -27,7 +27,7 @@ const productData = [
     "title": "c"
   },
   {
-    "category": "a",
+    "category": "men's clothing",
     "description": "b",
     "id": 1,
     "image": "print polo.png",
@@ -36,7 +36,7 @@ const productData = [
     "title": "c"
   },
   {
-    "category": "a",
+    "category": "men's clothing",
     "description": "b",
     "id": 2,
     "image": "scott international.png",
@@ -45,7 +45,7 @@ const productData = [
     "title": "c"
   },
   {
-    "category": "a",
+    "category": "men's clothing",
     "description": "b",
     "id": 3,
     "image": "Beninos.png",
@@ -53,6 +53,67 @@ const productData = [
     "rating": { "rate": 5.9, "count": 120 },
     "title": "c"
   }
+
+
+
+
+
+  ,
+  {
+    "category": "women's clothing",
+    "description": "b",
+    "id": 3,
+    "image": "Alan Jones Clothing.png",
+    "price": "3",
+    "rating": { "rate": 5.9, "count": 120 },
+    "title": "c"
+  },
+  {
+    "category": "women's clothing",
+    "description": "b",
+    "id": 3,
+    "image": "Amazon Brand mx.png",
+    "price": "3",
+    "rating": { "rate": 5.9, "count": 120 },
+    "title": "c"
+  },
+  {
+    "category": "women's clothing",
+    "description": "b",
+    "id": 3,
+    "image": "OOMPH.png",
+    "price": "3",
+    "rating": { "rate": 5.9, "count": 120 },
+    "title": "c"
+  },
+  {
+    "category": "women's clothing",
+    "description": "b",
+    "id": 3,
+    "image": "Anni Designer.png",
+    "price": "3",
+    "rating": { "rate": 5.9, "count": 120 },
+    "title": "c"
+  },
+  {
+    "category": "women's clothing",
+    "description": "b",
+    "id": 3,
+    "image": "eWools.png",
+    "price": "3",
+    "rating": { "rate": 5.9, "count": 120 },
+    "title": "c"
+  },
+  {
+    "category": "women's clothing",
+    "description": "b",
+    "id": 3,
+    "image": "jockey.png",
+    "price": "3",
+    "rating": { "rate": 5.9, "count": 120 },
+    "title": "c"
+  }
+
 ]
 
 
