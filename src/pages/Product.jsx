@@ -5,7 +5,8 @@ import Marquee from "react-fast-marquee";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
 import productData from "./ProductDetails";
-
+import { ref, getDownloadURL } from "firebase/storage";
+import storage from "../firebase-config";
 import { Footer, Navbar } from "../components";
 
 const Product = () => {
@@ -25,20 +26,44 @@ const Product = () => {
     const getProduct = async () => {
       setLoading(true);
       setLoading2(true);
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-      const data = await response.json();
-    
+      // const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const data = productData.filter((item) => `${item.id}` == id)[0];
       setProduct(data);
       setLoading(false);
-      const response2 = await fetch(
-        `https://fakestoreapi.com/products/category/${data.category}`
-      );
-      const data2 = await response2.json();
+      // const response2 = await fetch(
+      //   `https://fakestoreapi.com/products/category/${data.category}`
+      // );
+      const data2 = productData.filter((item) => item.category == data.category);
+      console.log(data2);
       setSimilarProducts(data2);
       setLoading2(false);
     };
     getProduct();
   }, [id]);
+
+
+  const ImageFirebase = ({imageName}) => {
+    const [imageURL, setimageURL] = useState("");
+    useEffect(() => {
+      getDownloadURL(ref(storage, `images/${imageName}`))
+        .then((url) => {
+          console.log(url);
+          setimageURL(url);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }, [imageName]);
+
+    return (
+      <img
+        src={imageURL}
+        className="card-img-top p-3"
+        alt="Card"
+        height={300}
+      />
+    );
+  };
 
   const Loading = () => {
     return (
@@ -69,13 +94,7 @@ const Product = () => {
         <div className="container my-5 py-2">
           <div className="row">
             <div className="col-md-6 col-sm-12 py-3">
-              <img
-                className="img-fluid"
-                src={product.image}
-                alt={product.title}
-                width="400px"
-                height="400px"
-              />
+            <ImageFirebase imageName={product.image} />
             </div>
             <div className="col-md-6 col-md-6 py-5">
               <h4 className="text-uppercase text-muted">{product.category}</h4>
@@ -133,13 +152,7 @@ const Product = () => {
             {similarProducts.map((item) => {
               return (
                 <div key={item.id} className="card mx-4 text-center">
-                  <img
-                    className="card-img-top p-3"
-                    src={item.image}
-                    alt="Card"
-                    height={300}
-                    width={300}
-                  />
+                  <ImageFirebase imageName={item.image} />
                   <div className="card-body">
                     <h5 className="card-title">
                       {item.title.substring(0, 15)}...

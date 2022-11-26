@@ -165,7 +165,7 @@ const Products = () => {
                   </Link>
                   <button
                     className="btn btn-dark m-1"
-                    onClick={() => addProduct(product, imageURL)}
+                    onClick={() => addProduct(product)}
                   >
                     Add to Cart
                   </button>

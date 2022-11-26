@@ -29,7 +29,7 @@ const productData = [
   {
     "category": "men's clothing",
     "description": "combo of 2",
-    "id": 1,
+    "id": 4,
     "image": "print polo.png",
     "price": "900",
     "rating": { "rate": 3.9, "count": 120 },
@@ -38,7 +38,7 @@ const productData = [
   {
     "category": "men's clothing",
     "description": "comfortable mens wear",
-    "id": 2,
+    "id": 5,
     "image": "scott international.png",
     "price": "5000",
     "rating": { "rate": 4.9, "count": 120 },
@@ -47,7 +47,7 @@ const productData = [
   {
     "category": "men's clothing",
     "description": "white formal shirt",
-    "id": 3,
+    "id": 6,
     "image": "Beninos.png",
     "price": "599",
     "rating": { "rate": 5.9, "count": 120 },
@@ -62,7 +62,7 @@ const productData = [
   {
     "category": "women's clothing",
     "description": "fit slim ladies wear",
-    "id": 3,
+    "id": 7,
     "image": "Alan Jones Clothing.png",
     "price": "1099",
     "rating": { "rate": 5.9, "count": 120 },
@@ -71,7 +71,7 @@ const productData = [
   {
     "category": "women's clothing",
     "description": "normal fit ladies wear",
-    "id": 3,
+    "id": 8,
     "image": "Amazon Brand mx.png",
     "price": "2000",
     "rating": { "rate": 5.9, "count": 120 },
@@ -80,7 +80,7 @@ const productData = [
   {
     "category": "women's clothing",
     "description": "with beautiful design",
-    "id": 3,
+    "id": 9,
     "image": "OOMPH.png",
     "price": "5999",
     "rating": { "rate": 5.9, "count": 120 },
@@ -89,7 +89,7 @@ const productData = [
   {
     "category": "women's clothing",
     "description": "comfortable ladies wear",
-    "id": 3,
+    "id": 10,
     "image": "Anni Designer.png",
     "price": "7000",
     "rating": { "rate": 5.9, "count": 120 },
@@ -98,7 +98,7 @@ const productData = [
   {
     "category": "women's clothing",
     "description": "100% cotton",
-    "id": 3,
+    "id": 11,
     "image": "eWools.png",
     "price": "6000",
     "rating": { "rate": 5.9, "count": 120 },
@@ -107,7 +107,7 @@ const productData = [
   {
     "category": "women's clothing",
     "description": "full black sleeve",
-    "id": 3,
+    "id": 12,
     "image": "jockey.png",
     "price": "2500",
     "rating": { "rate": 5.9, "count": 120 },
@@ -120,7 +120,7 @@ const productData = [
 {
   "category": "jewelery",
   "description": "thin pearl necklace",
-  "id": 3,
+  "id": 13,
   "image": "Estele.png",
   "price": "30000",
   "rating": { "rate": 5.9, "count": 120 },
@@ -130,7 +130,7 @@ const productData = [
 {
   "category": "jewelery",
   "description": "amazing design",
-  "id": 3,
+  "id": 14,
   "image": "Pearls.png",
   "price": "40000",
   "rating": { "rate": 5.9, "count": 120 },
@@ -139,7 +139,7 @@ const productData = [
 {
   "category": "jewelery",
   "description": "24 carrot gold ",
-  "id": 3,
+  "id": 15,
   "image": "saistrends.png",
   "price": "50000",
   "rating": { "rate": 5.9, "count": 120 },
@@ -148,7 +148,7 @@ const productData = [
 {
   "category": "jewelery",
   "description": "shining silver",
-  "id": 3,
+  "id": 16,
   "image": "shining Diva.png",
   "price": "80000",
   "rating": { "rate": 5.9, "count": 120 },
@@ -157,7 +157,7 @@ const productData = [
 {
   "category": "jewelery",
   "description": "Short necklace",
-  "id": 3,
+  "id": 17,
   "image": "YouBella.png",
   "price": "90000",
   "rating": { "rate": 5.9, "count": 120 },
@@ -166,7 +166,7 @@ const productData = [
 {
   "category": "jewelery",
   "description": "silver necklace",
-  "id": 3,
+  "id": 18,
   "image": "Zeneme.png",
   "price": "100000",
   "rating": { "rate": 5.9, "count": 120 },
@@ -178,7 +178,7 @@ const productData = [
 {
   "category": "electronics",
   "description": "amazing and comfortable design",
-  "id": 3,
+  "id": 19,
   "image": "Boult Audio.png",
   "price": "2000",
   "rating": { "rate": 5.9, "count": 120 },
@@ -187,7 +187,7 @@ const productData = [
 {
   "category": "electronics",
   "description": "wireless charger",
-  "id": 3,
+  "id": 20,
   "image": "pTron Bullet Wireless.png",
   "price": "4000",
   "rating": { "rate": 5.9, "count": 120 },
@@ -196,7 +196,7 @@ const productData = [
 {
   "category": "electronics",
   "description": "solar charging calculator",
-  "id": 3,
+  "id": 21,
   "image": "orpat.png",
   "price": "5000",
   "rating": { "rate": 5.9, "count": 120 },
@@ -205,7 +205,7 @@ const productData = [
 {
   "category": "electronics",
   "description": "thermometer",
-  "id": 3,
+  "id": 22,
   "image": "Taparia voltage.png",
   "price": "6000",
   "rating": { "rate": 5.9, "count": 120 },
@@ -214,7 +214,7 @@ const productData = [
 {
   "category": "electronics",
   "description": "flat and comfortable keyboard",
-  "id": 3,
+  "id": 23,
   "image": "TVS Keyboard.png",
   "price": "700",
   "rating": { "rate": 5.9, "count": 120 },
@@ -223,7 +223,7 @@ const productData = [
 {
   "category": "electronics",
   "description": "small and easy to carry",
-  "id": 3,
+  "id": 24,
   "image": "Zebronics Mouse.png",
   "price": "800",
   "rating": { "rate": 5.9, "count": 120 },
